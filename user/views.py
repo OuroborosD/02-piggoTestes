@@ -64,6 +64,10 @@ def login(request):
         pass
     return render(request,'user/login.html')
 
+def logout(request):
+    auth.logout(request)
+    return redirect('user_login')
+
 @login_required(redirect_field_name='user_login')
 def dashboard(request):
         return render(request,'user/dashboard.html')

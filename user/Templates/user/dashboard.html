@@ -7,6 +7,18 @@
     <title>Document</title>
 </head>
 <body>
- <h1>   olá {{ user }} {{user.password}}  </h1>
+ <h1>   olá 
+ {{ user }} <!-- usuario   --> 
+ | {{user.first_name}} |  <!-- primiero nome    -->  
+ {{user.password}}   <!-- senha --> 
+
+ {% if user.is_authenticated %}
+  <p> se estiver logado entra aqui</p>
+ {% else %}
+<p> caso não esteja entra aqui</p>
+ {% endif %}
+
+ <a href=" {% url 'user_logout' %} "> clique aqui para sair</a>
+  </h1>
 </body>
 </html>

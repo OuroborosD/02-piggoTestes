@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cadastro/', include('user.urls')),
+     path('accounts/', include('user.urls')),#segundo path pois redireciona para ele
 ]
